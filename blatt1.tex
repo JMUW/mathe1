@@ -16,12 +16,12 @@ Da aber \(\neg A \land B  \) falsch, so sind die Aussagen nicht tautologisch gle
 \subsubsection{\((A \Rightarrow B) \iff (\neg A) \lor B  \)}
 \begin{center}
 \begin{tabular}{||c c | c c | c ||}
- A & B & \(A \Rightarrow B\) & \((\neg A) \lor B\) &\(... \iff ...\) \\
- \hline
- w & w & w & w & w \\
- w & f & f & f & w \\
- f & w & w & w & w \\
- f & f & w & w & w \\
+  A & B & \(A \Rightarrow B\) & \((\neg A) \lor B\) &\(... \iff ...\) \\
+  \hline
+  w & w & w & w & w \\
+  w & f & f & f & w \\
+  f & w & w & w & w \\
+  f & f & w & w & w \\
 \end{tabular}
 \end{center}
 Gemäß Wahrheitstabelle stimmen die Aussagen \((A \Rightarrow B) \) und \( (\neg A) \lor B  \)  für alle Kombinationen aus A und B überein und sind somit Tautologien.
@@ -30,12 +30,12 @@ Gemäß Wahrheitstabelle stimmen die Aussagen \((A \Rightarrow B) \) und \( (\ne
 
 \begin{center}
 \begin{tabular}{||c c | c c| c ||}
- A & B & \(((A \Rightarrow B) \land (\neg B))\) & \((\neg A)\)  & \(... \Rightarrow ...\) \\
- \hline
- w & w & f & f & w \\
- w & f & f & f & w \\
- f & w & f & w & w \\
- f & f & w & w & w \\
+  A & B & \(((A \Rightarrow B) \land (\neg B))\) & \((\neg A)\)  & \(... \Rightarrow ...\) \\
+  \hline
+  w & w & f & f & w \\
+  w & f & f & f & w \\
+  f & w & f & w & w \\
+  f & f & w & w & w \\
 \end{tabular}
 \end{center}
 Für alle Kominationen aus A und B stimmt die Implikation und ist so mit tautologisch gültig.
@@ -44,23 +44,22 @@ Für alle Kominationen aus A und B stimmt die Implikation und ist so mit tautolo
 \subsubsection{Verneinung}
 
 \begin{itemize}
-    \item Es gibt Informatiker, die machen nicht gerne Musik.
-    \item  Alle Informatiker können programmieren
-    \item  Es regnet und die Straße ist nicht nass
+  \item Es gibt Informatiker, die machen nicht gerne Mathematik.
+  \item Alle Informatiker können programmieren oder lesen.
+  \item Es regnet und die Straße ist nicht nass.
 \end{itemize}
 
 \subsubsection{}
 Aus den Bedingung ergibt sich folgende Aussage für den potentiellen Mörder:
-\((\neg V)\land S) \lor (\neg N \land F)\)
+\((\neg V \land S) \lor (\neg N \land F)\)
 
 \begin{center}
 \begin{tabular}{|c || c c c c | c |}
-Erbe & V & S & N & F & \( (\neg V \land S) \lor (\neg N \land F) \) \\
-
- \hline
- Anton & w & w & f & f & f\\
- Birgit & w & f & f & w & w\\
- Carsten & f & & f w & w & f \\
+  Erbe & V & S & N & F & \( (\neg V \land S) \lor (\neg N \land F) \) \\
+  \hline
+  Anton & w & w & f & f & f\\
+  Birgit & w & f & f & w & w\\
+  Carsten & f & f & w & w & f \\
 \end{tabular}
 \end{center}
 
