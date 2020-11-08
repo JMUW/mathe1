@@ -1,0 +1,115 @@
+\documentclass[a4paper,abstract,german]{scrreprt}
+
+%
+% Packages
+%
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amsfonts} 
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=2cm,includeheadfoot]{geometry}
+
+\setlength{\parindent}{0pt} 
+
+
+
+%
+% Eigene Macros
+%
+\newcommand{\N}{\mathbb{N}} 
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\C}{\mathbb{C}} 
+
+%
+% Beginn des eigentlichen Dokuments
+%
+\begin{document}
+
+
+\noindent
+{\begin{flushright}
+%
+% Hier die Namen einfüllen
+%	
+Name 1\\
+Name 2\\
+Name 3
+\end{flushright}}
+\begin{center}
+	{\textbf  {Mathematik für Informatiker 1}} \\
+	{\textbf {Abgabe 2. Übungsblatt}}
+\end{center}\vspace{0.3cm}
+
+%
+% Aufzählung der Aufgaben
+%
+\begin{enumerate}
+	
+	
+	\item[\textbf {H2.1}]
+	\begin{enumerate}
+	\item[\textbf {i)}]
+    	De Morgansche Regeln in der Wahrheitstafel: \\
+    	%
+    	% Hier ist Platz für die Lösung einer Aufgabe
+    	%
+    	\begin{center}
+        \begin{tabular}{||c c | c c | c c ||}
+         A & B & $\neg (A \land B)$ & $\neg A \lor \neg B$ & $\neg (A \lor B)$ & $\neg A \land \neg B $ \\
+         \hline
+         w & w & f & f & w & w\\
+         w & f & w & w & w & w\\
+         f & w & w & w & w & w\\
+         f & f & w & w & f & f\\
+        \end{tabular}
+        \end{center}
+    \item[\textbf {ii)}]
+        de Morgansche Regeln Beweis mengentheoretisch:
+
+	\end{enumerate}
+	\item[\textbf {H2.2}]
+	Umschreiben der Aussagen unter der ausschließlichen Verwendung von $A, B, \uparrow$. Beweis, dass Aussage korrekt.
+	\begin{enumerate}
+	\item
+    	$ A \land B$:\\
+    	$(A \uparrow B) \uparrow(A \uparrow B)$
+    \item
+    	$ A \implies B$:\\
+    \item
+    	$ A \lor B$:\\
+    \item
+    	true(A):\\
+    \item
+    	false(A):\\
+
+	\end{enumerate}
+	
+		\item[\textbf {H2.3}]
+	Beweistechniken
+	\begin{enumerate}
+	\item
+    	Seien $M,N, O$ Mengen mit $M \subset N$ und $N \subset O$, sowie $m \in M$.\\
+    	
+    	So gilt auch $m \in O$.
+    \item
+    	Beweise mit Kontraposition: $\forall n \in \mathbb{N}: n^2$ ungerade $\implies n$ ungerade  
+    \item
+        Beweise mit Widerspruchsbeweis: $\nexists z \in \mathbb{Z}: 0*z=1$\\
+    	
+
+	\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
