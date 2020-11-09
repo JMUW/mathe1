@@ -34,26 +34,6 @@
 %
 % Beginn des eigentlichen Dokuments
 %
-\begin{document}
-
-
-\noindent
-{\begin{flushright}
-%
-% Hier die Namen einfüllen
-%	
-Name 1\\
-Name 2\\
-Name 3
-\end{flushright}}
-\begin{center}
-	{\textbf  {Mathematik für Informatiker 1}} \\
-	{\textbf {Abgabe 2. Übungsblatt}}
-\end{center}\vspace{0.3cm}
-
-%
-% Aufzählung der Aufgaben
-%
 \begin{enumerate}
 	
 	
@@ -66,7 +46,7 @@ Name 3
     	%
     	\begin{center}
         \begin{tabular}{||c c | c c | c c ||}
-         A & B & $\neg (A \land B)$ & $\neg A \lor \neg B$ & $\neg (A \lor B)$ & $\neg A \land \neg B $ \\
+         A & B & $\overline{A \land B}$ & $\overline{A} \lor \overline{B}$ & $\overline{A \lor B}$ & $\overline{A} \land \overline{B} $ \\
          \hline
          w & w & f & f & w & w\\
          w & f & w & w & w & w\\
@@ -75,23 +55,89 @@ Name 3
         \end{tabular}
         \end{center}
     \item[\textbf {ii)}]
-        de Morgansche Regeln Beweis mengentheoretisch:
+        Seien die Mengen $M \subset X$ und $N\subset X$ dann sind die Mengen $\overline{M} \cap \overline{N}$ und $\overline{M \cup N}$ definiert durch:\\
+        
+        $\overline{M} \cap \overline{N} := \{ x |x \in X \land x \notin M \land M \subset X \land x \notin N \land N \subset X \}$ \\
+        $\overline{M \cup N} := \{x|x \in X \land x \notin (M \cup N) \land (M \cup N) \subset X\}$  \\
+        
+        Wir formen um mit der aussagelogischen de Morganschen Regel $\overline{A\lor B} \iff \overline{A} \land \overline{B}  $: $ {x \notin (M \cup N)} = \{\overline{x \in M \lor x \in N}\} = \{x \notin M \land x \notin N\} $ und setzen wieder in obere Beschreibung ein:\\
+        
+        $\overline{M \cup N} := \{x|x \in X \land  x \notin M \land x \notin N \land (M \cup N) \subset X\}$ \\
+        $\overline{M} \cap \overline{N} := \{ x |x \in X \land x \notin M \land x \notin N \land M \subset X \land N \subset X \}$ \\ 
+        
+         Da sowohl $M \subset X$ und $N\subset X$, liegt auch die Vereinigungsmenge $M \cup N \subset X$ in X:
+         Somit ist gezeigt, dass die beiden Umformungen identisch sind und die mengentheoretische de Morgansche Regel bewiesen.
 
 	\end{enumerate}
 	\item[\textbf {H2.2}]
 	Umschreiben der Aussagen unter der ausschließlichen Verwendung von $A, B, \uparrow$. Beweis, dass Aussage korrekt.
 	\begin{enumerate}
-	\item
-    	$ A \land B$:\\
-    	$(A \uparrow B) \uparrow(A \uparrow B)$
+	\item $ A \land B \iff (A \uparrow B) \uparrow(A \uparrow B)$
+	
+	\begin{center}
+        \begin{tabular}{||c c | c | c | c ||}
+         A & B & $ A \land B$ & $A \uparrow B$ & $(A \uparrow B) \uparrow(A \uparrow B)$  \\
+         \hline
+         w & w & w & f & w \\
+         w & f & f & w & f \\
+         f & w & f & w & f \\
+         f & f & f & w & f \\
+        \end{tabular}
+        \end{center}
+    	
+    	
     \item
-    	$ A \implies B$:\\
+    	$ A \rightarrow B \iff A \uparrow \overline{B} \iff A \uparrow (B \uparrow B) $ \\
+    		\begin{center}
+        \begin{tabular}{||c c | c | c ||}
+         A & B & $ A \rightarrow B$ & $A \uparrow (B \uparrow B)$  \\
+         \hline
+         w & w & w & w \\
+         w & f & f & f \\
+         f & w & w & w \\
+         f & f & w & w  \\
+        \end{tabular}
+        \end{center}
+        
     \item
-    	$ A \lor B$:\\
+    	$ A \lor B \iff \overline{A} \uparrow \overline{B}$
+    	$\iff  (A \uparrow A) \uparrow (B \uparrow B)$
+    	\begin{center}
+    	\begin{tabular}{||c c | c | c ||}
+         A & B & $ A \lor B$ & $(A \uparrow A) \uparrow (B \uparrow B)$ \\
+         \hline
+         w & w & w & w\\
+         w & f & w & w\\
+         f & w & w & w\\
+         f & f & f & f\\
+        \end{tabular}
+        \end{center}
+        
     \item
     	true(A):\\
+    	$\iff A \lor \overline{A} \iff  \overline{A} \uparrow \overline{\overline{A}} \iff  \overline{A} \uparrow A \iff  (A \uparrow A) \uparrow A$
+    	\begin{center}
+    	\begin{tabular}{||c | c | c | c  ||}
+         A & $A \uparrow A$  & $ (A \uparrow A) \uparrow A$ & true(A) \\
+         \hline
+         w & f & w & w\\
+         f & w & w & w\\
+        \end{tabular}
+        \end{center}
+        
     \item
     	false(A):\\
+    	Negierung von true(A), bzw.
+    	$A \land \overline{A} \iff (A \uparrow (A \uparrow A)) \uparrow(A \uparrow (A \uparrow A))$
+    	
+    	\begin{center}
+    	\begin{tabular}{||c | c | c | c  ||}
+         A & $ (A \uparrow A) \uparrow A$ & $[(A \uparrow A) \uparrow A)] \uparrow [(A \uparrow A) \uparrow A)]$ & false(A) \\
+         \hline
+         w & w & f & f\\
+         f & w & f & f\\
+        \end{tabular}
+        \end{center}
 
 	\end{enumerate}
 	
@@ -101,9 +147,21 @@ Name 3
 	\item
     	Seien $M,N, O$ Mengen mit $M \subset N$ und $N \subset O$, sowie $m \in M$.\\
     	
-    	So gilt auch $m \in O$.
+    	M ist eine Teilmenge von N und daher nach Definition der Teilmenge $(x \in M \implies x \in N)$ $m \in N$, da $m \in M$.
+    	
+    	Da N widerum selbst eine Teilmenge von O ist, so gilt auch hier nach Def. $(x \in N \implies x \in O)$ durch $m \in N$ auch $m \in O$.
+    
     \item
-    	Beweise mit Kontraposition: $\forall n \in \mathbb{N}: n^2$ ungerade $\implies n$ ungerade  
+    	Z.z das gilt $n \in \mathbb{N}: n^2$ ungerade $\implies n$ ungerade\\  
+    	Nach Kontraposition gelte somit $ n \in \mathbb{N}: n$ gerade $\implies n^2$ gerade.
+    	
+    	Da n gerade, also $n \in 2\Z$ ist, so gilt $n = 2*k$, wobei $k \in \N $:
+    	
+    	Das Quadrat dieser gerade Zahl n beträgt $ n^2 = (2k)^2 = 4*k^2 $
+    	
+    	Durch den Teiler $4$ wird das Produkt immer gerade sein. Somit wäre die Kontraposition bewiesen, dass das Quadrat einer geraden Zahl immer gerade ist.
+    	
+    	Somit gelte auch die ursprüngliche Aussage, dass das ungerade Quadrat durch eine ungerade Basis entstand.
     \item
         Beweise mit Widerspruchsbeweis: $\nexists z \in \mathbb{Z}: 0*z=1$\\
     	
