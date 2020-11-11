@@ -72,18 +72,31 @@
         \end{tabular}
         \end{center}
     \item[\textbf {ii)}]
-        Seien die Mengen $M \subset X$ und $N\subset X$ dann sind die Mengen $\overline{M} \cap \overline{N}$ und $\overline{M \cup N}$ definiert durch:\\
+    \textbf{z.Z. $\overline{M} \cap \overline{N} = \overline{M \cup N}$}
+    
+        Seien $x \in X$, $M \subset X$ und $N\subset X$.
         
-        $\overline{M} \cap \overline{N} := \{ x |x \in X \land x \notin M \land M \subset X \land x \notin N \land N \subset X \}$ \\
-        $\overline{M \cup N} := \{x|x \in X \land x \notin (M \cup N) \land (M \cup N) \subset X\}$  \\
+        Dann sind die Mengen $\overline{M} \cap \overline{N}$ und $\overline{M \cup N}$ definiert durch:
         
-        Wir formen um mit der aussagelogischen de Morganschen Regel $\overline{A\lor B} \iff \overline{A} \land \overline{B}  $: $ {x \notin (M \cup N)} = \{\overline{x \in M \lor x \in N}\} = \{x \notin M \land x \notin N\} $ und setzen wieder in obere Beschreibung ein:\\
+        $\overline{M} \cap \overline{N} := \{ x |x \notin M \land x \notin N \}$
         
-        $\overline{M \cup N} := \{x|x \in X \land  x \notin M \land x \notin N \land (M \cup N) \subset X\}$ \\
-        $\overline{M} \cap \overline{N} := \{ x |x \in X \land x \notin M \land x \notin N \land M \subset X \land N \subset X \}$ \\ 
+        $\overline{M \cup N} := \{x|\overline{x \in M \lor x \in N} \}$  \\
         
-         Da sowohl $M \subset X$ und $N\subset X$, liegt auch die Vereinigungsmenge $M \cup N \subset X$ in X:
-         Somit ist gezeigt, dass die beiden Umformungen identisch sind und die mengentheoretische de Morgansche Regel bewiesen.
+        Wir formen um gemäß de Morganschen Regel $\overline{A\lor B} \iff \overline{A} \land \overline{B}  $:
+        
+       $\overline{M} \cap \overline{N} := \{ x |x \notin M \land x \notin N \}$ \\ 
+        
+         Somit ist gezeigt, dass $\overline{M} \cap \overline{N} = \overline{M \cup N}$: auch mengentheoretisch äquivalent.
+         
+         \bigskip
+         \textbf{z.Z.
+         $\overline{M \cap N} = \overline{M} \cup \overline{N}$:}
+         
+         Es gelte allgemein $x\in X$, $M \subset X$ und $N \subset X$.
+         
+         $\overline{M \cap N} := \{x| \overline{x \in M \land x \in N} \}$ nach de Morgansche Regel aus i) ist das gleichbedeutend mit $\{x| x \notin M \lor x \notin N \}$. 
+         
+        $\overline{M} \cup \overline{N} := \{x|x \notin M \lor x \notin N\}$ und ist somit identisch zu der umgeformten Form von $\overline{M \cap N}$ und  $\overline{M \cap N} = \overline{M} \cup \overline{N}$ somit äquivalent.
 
 	\end{enumerate}
 	\item[\textbf {H2.2}]
@@ -166,7 +179,7 @@
     	
     	M ist eine Teilmenge von N und daher nach Definition der Teilmenge $(x \in M \implies x \in N)$ $m \in N$, da $m \in M$.
     	
-    	Da N widerum selbst eine Teilmenge von O ist, so gilt auch hier nach Def. $(x \in N \implies x \in O)$ durch $m \in N$ auch $m \in O$.
+    	Da N wiederum selbst eine Teilmenge von O ist, so gilt auch hier nach Def. $(x \in N \implies x \in O)$ durch $m \in N$ auch $m \in O$.
     
     \item
     	Z.z das gilt $n \in \mathbb{N}: n^2$ ungerade $\implies n$ ungerade\\  
@@ -179,12 +192,19 @@
     	Durch den Teiler $4$ wird das Produkt immer gerade sein. Somit wäre die Kontraposition bewiesen, dass das Quadrat einer geraden Zahl immer gerade ist.
     	
     	Somit gelte auch die ursprüngliche Aussage, dass das ungerade Quadrat durch eine ungerade Basis entstand.
-    \item
-        Beweise mit Widerspruchsbeweis: $\nexists z \in \mathbb{Z}: 0*z=1$\\
     	
+    \item
+        Beweise mit Widerspruchsbeweis: $\nexists z \in \Z: 0*z=1$\\
+
+    	Annahme: Es gibt eine ganze Zahl $z \in \Z$, für die $0*z=1$ gilt:
+    	
+    	$\exists z \in \Z: 0*z=1$
+    	
+    	$0*z=1 \iff z = \frac{1}{0} \implies $ n.def. Widerspruch!
+    	
+    	
+    	Da $\frac{1}{0}$ nicht definiert ist existiert keine Lösung für $z \in Z$, also $\nexists z \in \Z: 0*z=1$.
 
 	\end{enumerate}
 
 \end{enumerate}
-
-\end{document}
